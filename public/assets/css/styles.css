@@ -1,3 +1,5 @@
+
+
 /* ============================================================
    VARIABLES — LIGHT MODE
    ============================================================ */
@@ -50,6 +52,15 @@
 
   --color-focus: #C9973A;
   --color-focus-ring: rgba(201, 151, 58, .15);
+
+
+  /* ── Loading ── */
+
+  --color-loading-bg: rgba(201, 151, 58, .08);
+  --color-loading-border: rgba(201, 151, 58, .25);
+  --color-loading-spinner: #C9973A;
+  --color-loading-text: #2D2D2D;
+  --color-loading-button-spinner: #FFFFFF;
 
 
   /* ── Disabled ── */
@@ -119,6 +130,13 @@
   --color-focus-ring: rgba(216, 170, 75, .18);
 
 
+  --color-loading-bg: rgba(216, 170, 75, .10);
+  --color-loading-border: rgba(216, 170, 75, .28);
+  --color-loading-spinner: #D8AA4B;
+  --color-loading-text: #F8F5F0;
+  --color-loading-button-spinner: #FFFFFF;
+
+
   --color-disabled-bg: #2A2826;
   --color-disabled-border: #44403C;
   --color-disabled-text: #88827C;
@@ -142,13 +160,10 @@ html {
 
 body {
   font-family: "Source Sans 3", "Source Sans Pro", Arial, sans-serif;
-
   color: var(--color-text);
   background: var(--color-bg);
-
   font-size: var(--font-body);
   line-height: 1.6;
-
   overflow-x: hidden;
 }
 
@@ -224,18 +239,13 @@ small {
 
 .la-navbar {
   min-height: var(--nav-height);
-
-  transition:
-    background .3s,
-    box-shadow .3s;
+  transition: background .3s, box-shadow .3s;
 }
 
 
 .la-navbar.scrolled {
   background: rgba(26, 26, 26, .96);
-
   backdrop-filter: blur(14px);
-
   box-shadow: var(--shadow-navbar);
 }
 
@@ -243,12 +253,10 @@ small {
 .la-brand {
   display: inline-flex;
   align-items: center;
-
   gap: 10px;
 
   font-family: "Playfair Display", serif;
   font-weight: 700;
-
   color: var(--color-on-dark);
 }
 
@@ -256,18 +264,14 @@ small {
 .la-brand > span {
   display: flex;
   flex-direction: column;
-
   line-height: 1.1;
-
   font-size: 14px;
 }
 
 
 .la-brand strong {
   color: var(--color-accent);
-
   font-size: 12px;
-
   letter-spacing: .08em;
 }
 
@@ -280,11 +284,9 @@ small {
   place-items: center;
 
   border: 1px solid rgba(201, 151, 58, .5);
-
   border-radius: 6px;
 
   color: var(--color-accent);
-
   font-size: 14px;
 }
 
@@ -309,21 +311,14 @@ small {
 
 
 .la-nav-cta {
-  min-height: 48px;
-
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-
   font-size: 14px;
   font-weight: 700;
 
   color: var(--color-on-dark) !important;
 
-  padding: 0 16px !important;
+  padding: 10px 16px !important;
 
   background: var(--color-primary);
-
   border-radius: 8px;
 
   transition: background .2s;
@@ -337,18 +332,14 @@ small {
 
 .la-toggler {
   background: transparent;
-
   border: 0;
-
   box-shadow: none !important;
-
   padding: 4px;
 }
 
 
 .la-toggler span {
   display: block;
-
   width: 22px;
   height: 2px;
 
@@ -364,26 +355,22 @@ small {
     background: rgba(26, 26, 26, .98);
 
     border: 1px solid rgba(255, 255, 255, .1);
-
     border-radius: 14px;
 
     padding: 12px;
-
     margin-top: 10px;
   }
 
   .la-nav-link,
   .la-nav-cta {
-    min-height: 48px;
-
-    display: flex !important;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 0 12px !important;
+    padding: 12px !important;
+    display: block;
   }
 
+  .la-nav-cta {
+    text-align: center;
+    margin-top: 5px;
+  }
 }
 
 
@@ -393,19 +380,15 @@ small {
 
 .la-eyebrow {
   display: inline-flex;
-
   align-items: center;
-
   gap: 7px;
 
   color: var(--color-primary);
 
   font-size: 12px;
-
   font-weight: 700;
 
   letter-spacing: .16em;
-
   text-transform: uppercase;
 
   margin-bottom: 14px;
@@ -422,13 +405,10 @@ small {
 .la-consulta h2,
 .la-honorarios h2,
 .la-contact h2 {
-
   font-family: "Playfair Display", serif;
-
   font-weight: 700;
 
   font-size: var(--font-h2);
-
   line-height: 1.25;
 }
 
@@ -438,7 +418,6 @@ small {
 .la-consulta h2 span,
 .la-honorarios h2 span,
 .la-contact h2 span {
-
   color: var(--color-primary);
 }
 
@@ -447,48 +426,17 @@ small {
    BOTONES
    ============================================================ */
 
-/*
-   Requisitos:
-   - Mínimo 14px
-   - Altura fija 48px
-   - Alineación vertical centrada
-   - Padding equilibrado
-*/
-
 .la-btn {
-
-  height: 48px;
-
   min-height: 48px;
-
   padding: 0 22px;
 
   font-size: var(--font-button);
-
   font-weight: 700;
 
   border-radius: 10px;
-
   border: 0;
 
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 8px;
-
-  line-height: 1;
-
-  box-sizing: border-box;
-
-  transition:
-    transform .2s,
-    background .2s,
-    border-color .2s,
-    box-shadow .2s,
-    opacity .2s;
+  transition: transform .2s, background .2s;
 }
 
 
@@ -497,60 +445,19 @@ small {
 }
 
 
-/* Focus */
-
-.la-btn:focus-visible {
-
-  outline: none;
-
-  border: 2px solid var(--color-focus) !important;
-
-  box-shadow:
-    0 0 0 3px var(--color-focus-ring) !important;
-}
-
-
-/* Disabled */
-
-.la-btn:disabled,
-.la-btn.disabled {
-
-  background-color: var(--color-disabled-bg) !important;
-
-  border-color: var(--color-disabled-border) !important;
-
-  color: var(--color-disabled-text) !important;
-
-  cursor: not-allowed;
-
-  opacity: .7;
-
-  transform: none !important;
-
-  box-shadow: none !important;
-
-  pointer-events: none;
-}
-
-
 .la-btn-primary {
-
   background: var(--color-primary);
-
   color: var(--color-on-dark);
 }
 
 
 .la-btn-primary:hover {
-
   background: var(--color-primary-hover);
-
   color: var(--color-on-dark);
 }
 
 
 .la-btn-outline {
-
   border: 1px solid rgba(255, 255, 255, .35);
 
   background: rgba(255, 255, 255, .05);
@@ -560,15 +467,12 @@ small {
 
 
 .la-btn-outline:hover {
-
   background: rgba(255, 255, 255, .12);
-
   color: var(--color-on-dark);
 }
 
 
 .la-btn-outline-dark {
-
   border: 1px solid var(--color-border);
 
   background: transparent;
@@ -578,9 +482,7 @@ small {
 
 
 .la-btn-outline-dark:hover {
-
   background: var(--color-border);
-
   color: var(--color-text);
 }
 
@@ -590,7 +492,6 @@ small {
    ============================================================ */
 
 .la-hero {
-
   min-height: 100svh;
 
   padding-bottom: 60px;
@@ -598,7 +499,6 @@ small {
   position: relative;
 
   display: flex;
-
   align-items: center;
 
   color: var(--color-on-dark);
@@ -606,24 +506,19 @@ small {
 
 
 .la-hero-bg {
-
   position: absolute;
-
   inset: -4%;
 
   background:
     url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2200&q=85")
     center / cover no-repeat;
 
-  animation:
-    la-zoom 20s ease-in-out infinite alternate;
+  animation: la-zoom 20s ease-in-out infinite alternate;
 }
 
 
 .la-hero-overlay {
-
   position: absolute;
-
   inset: 0;
 
   background:
@@ -655,9 +550,7 @@ small {
 
 
 .la-hero-content {
-
   position: relative;
-
   z-index: 2;
 
   padding-top: calc(var(--nav-height) + 10px);
@@ -665,17 +558,14 @@ small {
 
 
 .la-hero h1 {
-
   font-family: "Playfair Display", serif;
 
   font-size: var(--font-h1);
 
   font-weight: 700;
-
   line-height: 1.2;
 
   margin-bottom: 22px;
-
   margin-top: 16px;
 }
 
@@ -686,7 +576,6 @@ small {
 
 
 .la-hero p {
-
   color: var(--color-on-dark-muted);
 
   font-size: var(--font-body);
@@ -696,53 +585,42 @@ small {
 
 
 .la-hero-actions {
-
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 12px;
 
   margin-top: 30px;
-
   margin-bottom: 50px;
 }
 
 
 .la-hero-stats {
-
   display: flex;
-
   gap: 44px;
 }
 
 
 .la-hero-stats div {
-
   display: flex;
-
   flex-direction: column;
 }
 
 
 .la-hero-stats strong {
-
   font-family: "Playfair Display", serif;
 
   font-size: 26px;
-
   font-weight: 700;
 }
 
 
 .la-hero-stats span {
-
   font-size: 12px;
 
   color: var(--color-on-dark-soft);
 
   text-transform: uppercase;
-
   letter-spacing: .1em;
 
   margin-top: 3px;
@@ -750,7 +628,6 @@ small {
 
 
 .la-hero-card {
-
   padding: 26px;
 
   border-radius: 16px;
@@ -760,19 +637,14 @@ small {
   backdrop-filter: blur(14px);
 
   border-top: 3px solid var(--color-primary);
-
   border-right: 1px solid rgba(255, 255, 255, .1);
-
   border-bottom: 1px solid rgba(255, 255, 255, .1);
-
   border-left: 1px solid rgba(255, 255, 255, .1);
 }
 
 
 .la-card-label {
-
   display: flex;
-
   align-items: center;
 
   gap: 7px;
@@ -780,11 +652,9 @@ small {
   color: var(--color-accent);
 
   font-size: 12px;
-
   font-weight: 700;
 
   letter-spacing: .15em;
-
   text-transform: uppercase;
 
   margin-bottom: 18px;
@@ -797,13 +667,11 @@ small {
 
 
 .la-hero-card strong {
-
   display: block;
 
   font-family: "Playfair Display", serif;
 
   font-size: 22px;
-
   line-height: 1.1;
 
   margin-bottom: 10px;
@@ -811,7 +679,6 @@ small {
 
 
 .la-hero-card p {
-
   color: var(--color-on-dark-soft);
 
   font-size: 14px;
@@ -821,9 +688,7 @@ small {
 
 
 .la-hero-card a {
-
   display: inline-flex;
-
   align-items: center;
 
   gap: 7px;
@@ -831,13 +696,11 @@ small {
   color: var(--color-primary);
 
   font-size: 14px;
-
   font-weight: 700;
 }
 
 
 .la-card-divider {
-
   border-top: 1px solid rgba(255, 255, 255, .1);
 
   margin: 20px 0 14px;
@@ -845,9 +708,7 @@ small {
 
 
 .la-hero-card small {
-
   color: var(--color-on-dark-faint);
-
   font-size: 12px;
 }
 
@@ -857,33 +718,27 @@ small {
    ============================================================ */
 
 .la-section {
-
   padding: 105px 0;
 }
 
 
 .la-areas {
-
   background: var(--color-bg);
 }
 
 
 .la-areas p {
-
   color: var(--color-text-muted);
-
   font-size: var(--font-body);
 }
 
 
 .la-area-card {
-
   height: 100%;
 
   padding: 26px;
 
   border: 1px solid var(--color-border);
-
   border-radius: 18px;
 
   background: var(--color-bg-secondary);
@@ -898,7 +753,6 @@ small {
 
 
 .la-area-card:hover {
-
   border-top-color: var(--color-primary);
 
   transform: translateY(-4px);
@@ -908,13 +762,10 @@ small {
 
 
 .la-area-icon {
-
   width: 46px;
-
   height: 46px;
 
   display: grid;
-
   place-items: center;
 
   border-radius: 12px;
@@ -930,11 +781,9 @@ small {
 
 
 .la-area-card h3 {
-
   font-family: "Playfair Display", serif;
 
   font-size: var(--font-h3);
-
   font-weight: 700;
 
   margin-bottom: 10px;
@@ -942,7 +791,6 @@ small {
 
 
 .la-area-card p {
-
   color: var(--color-text-muted);
 
   font-size: var(--font-body);
@@ -952,9 +800,7 @@ small {
 
 
 .la-area-card a {
-
   font-size: 14px;
-
   font-weight: 700;
 
   color: var(--color-primary);
@@ -962,7 +808,6 @@ small {
 
 
 .la-area-card a:hover {
-
   color: var(--color-primary-hover);
 }
 
@@ -972,7 +817,6 @@ small {
    ============================================================ */
 
 .la-about {
-
   padding: 105px 0;
 
   background: var(--color-bg-secondary);
@@ -980,7 +824,6 @@ small {
 
 
 .la-about-image {
-
   min-height: 520px;
 
   border-radius: 18px;
@@ -992,7 +835,6 @@ small {
 
 
 .la-about p {
-
   color: var(--color-text-muted);
 
   font-size: var(--font-body);
@@ -1002,13 +844,11 @@ small {
 
 
 .la-check-list {
-
   list-style: none;
 
   padding: 0;
 
   display: grid;
-
   gap: 13px;
 
   margin-bottom: 28px;
@@ -1016,49 +856,39 @@ small {
 
 
 .la-check-list li {
-
   display: flex;
-
   align-items: center;
 
   gap: 10px;
 
   font-size: 14px;
-
   font-weight: 600;
 }
 
 
 .la-check-list li .bi {
-
   color: var(--color-primary);
-
   font-size: 15px;
 }
 
 
 .la-text-link {
-
   display: inline-flex;
-
   align-items: center;
 
   gap: 8px;
 
   font-size: 14px;
-
   font-weight: 700;
 
   color: var(--color-primary);
 
   text-transform: uppercase;
-
   letter-spacing: .06em;
 }
 
 
 .la-text-link:hover {
-
   color: var(--color-primary-hover);
 }
 
@@ -1068,7 +898,6 @@ small {
    ============================================================ */
 
 .la-consulta {
-
   padding: 100px 0;
 
   background:
@@ -1084,7 +913,6 @@ small {
 
 
 .la-consulta p {
-
   color: var(--color-on-dark-soft);
 
   font-size: var(--font-body);
@@ -1094,9 +922,7 @@ small {
 
 
 .la-consulta-pasos {
-
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 24px;
@@ -1106,11 +932,9 @@ small {
 
 
 .la-consulta-pasos span {
-
   font-size: 12px;
 
   text-transform: uppercase;
-
   letter-spacing: .08em;
 
   color: var(--color-on-dark-soft);
@@ -1118,7 +942,6 @@ small {
 
 
 .la-consulta-pasos b {
-
   display: block;
 
   font-family: "Playfair Display", serif;
@@ -1130,7 +953,6 @@ small {
 
 
 .la-consulta-box {
-
   padding: 32px;
 
   border-radius: 18px;
@@ -1142,7 +964,6 @@ small {
 
 
 .la-consulta-icon {
-
   font-size: 28px;
 
   color: var(--color-accent);
@@ -1152,11 +973,9 @@ small {
 
 
 .la-consulta-box h3 {
-
   font-family: "Playfair Display", serif;
 
   font-size: var(--font-h3);
-
   font-weight: 700;
 
   margin-bottom: 6px;
@@ -1164,7 +983,6 @@ small {
 
 
 .la-consulta-box > p {
-
   color: var(--color-on-dark-soft);
 
   font-size: var(--font-body);
@@ -1174,15 +992,12 @@ small {
 
 
 .la-consulta-form {
-
   display: flex;
-
   gap: 10px;
 }
 
 
 .la-input {
-
   background: rgba(255, 255, 255, .07) !important;
 
   border-color: rgba(255, 255, 255, .15) !important;
@@ -1198,21 +1013,17 @@ small {
 
 
 .la-input::placeholder {
-
   color: var(--color-on-dark-faint) !important;
 }
 
 
 .la-consulta-resultado {
-
   margin-top: 16px;
-
   min-height: 20px;
 }
 
 
 .la-consulta-resultado.la-success {
-
   padding: 18px;
 
   border-radius: 12px;
@@ -1224,7 +1035,6 @@ small {
 
 
 .la-consulta-resultado.la-error {
-
   padding: 14px;
 
   border-radius: 12px;
@@ -1239,8 +1049,79 @@ small {
 }
 
 
-.la-estado-badge {
+/* ============================================================
+   ESTADO DE CARGA — CONSULTA DE EXPEDIENTE
+   ============================================================ */
 
+.la-loading {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  background: var(--color-loading-bg);
+  border: 1px solid var(--color-loading-border);
+
+  color: var(--color-loading-text);
+
+  font-size: var(--font-body);
+  font-weight: 600;
+
+  animation: la-loading-fade-in .2s ease-out;
+}
+
+
+.la-loading-spinner {
+  width: 20px;
+  height: 20px;
+
+  flex: 0 0 20px;
+
+  border: 3px solid rgba(201, 151, 58, .25);
+  border-top-color: var(--color-loading-spinner);
+  border-radius: 50%;
+
+  animation: la-spinner .75s linear infinite;
+}
+
+
+.la-loading-text {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 20px;
+}
+
+
+@keyframes la-spinner {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes la-loading-fade-in {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+.la-estado-badge {
   display: inline-block;
 
   padding: 4px 12px;
@@ -1248,7 +1129,6 @@ small {
   border-radius: 99px;
 
   font-size: 12px;
-
   font-weight: 700;
 
   letter-spacing: .1em;
@@ -1262,7 +1142,6 @@ small {
 
 
 .la-consulta-nota {
-
   display: block;
 
   margin-top: 14px;
@@ -1280,13 +1159,11 @@ small {
    ============================================================ */
 
 .la-honorarios {
-
   background: var(--color-bg);
 }
 
 
 .la-honorarios p {
-
   color: var(--color-text-muted);
 
   font-size: var(--font-body);
@@ -1294,11 +1171,9 @@ small {
 
 
 .la-price-card {
-
   position: relative;
 
   display: flex;
-
   flex-direction: column;
 
   padding: 28px;
@@ -1314,7 +1189,6 @@ small {
 
 
 .la-price-featured {
-
   background: var(--color-bg-dark);
 
   color: var(--color-on-dark);
@@ -1326,11 +1200,9 @@ small {
 
 
 .la-price-featured em {
-
   position: absolute;
 
   top: 14px;
-
   right: 14px;
 
   background: var(--color-primary);
@@ -1347,17 +1219,14 @@ small {
     sans-serif;
 
   text-transform: uppercase;
-
   font-style: normal;
 }
 
 
 .la-price-label {
-
   display: block;
 
   font-size: 12px;
-
   font-weight: 700;
 
   letter-spacing: .12em;
@@ -1371,17 +1240,14 @@ small {
 
 
 .la-price-featured .la-price-label {
-
   color: rgba(201, 151, 58, .8);
 }
 
 
 .la-price-card h3 {
-
   font-family: "Playfair Display", serif;
 
   font-size: var(--font-h3);
-
   font-weight: 700;
 
   margin-bottom: 12px;
@@ -1389,11 +1255,9 @@ small {
 
 
 .la-price {
-
   font-family: "Playfair Display", serif;
 
   font-size: 40px;
-
   font-weight: 700;
 
   line-height: 1;
@@ -1401,7 +1265,6 @@ small {
 
 
 .la-price small {
-
   font-family: "Source Sans 3", sans-serif;
 
   font-size: 12px;
@@ -1411,13 +1274,11 @@ small {
 
 
 .la-price-featured .la-price small {
-
   color: var(--color-on-dark-soft);
 }
 
 
 .la-price-card > p {
-
   color: var(--color-text-muted);
 
   font-size: var(--font-body);
@@ -1429,13 +1290,11 @@ small {
 
 
 .la-price-featured > p {
-
   color: var(--color-on-dark-soft);
 }
 
 
 .la-pricing-note {
-
   color: var(--color-text-muted);
 
   font-size: 12px;
@@ -1447,13 +1306,11 @@ small {
    ============================================================ */
 
 .la-contact {
-
   background: var(--color-bg-secondary);
 }
 
 
 .la-contact p {
-
   color: var(--color-text-muted);
 
   font-size: var(--font-body);
@@ -1463,13 +1320,11 @@ small {
 
 
 .la-contact-list {
-
   list-style: none;
 
   padding: 0;
 
   display: grid;
-
   gap: 12px;
 
   margin-top: 24px;
@@ -1477,9 +1332,7 @@ small {
 
 
 .la-contact-list li {
-
   display: flex;
-
   align-items: center;
 
   gap: 10px;
@@ -1491,15 +1344,12 @@ small {
 
 
 .la-contact-list li .bi {
-
   color: var(--color-primary);
 }
 
 
 .la-wa {
-
   display: inline-flex;
-
   align-items: center;
 
   gap: 10px;
@@ -1517,7 +1367,6 @@ small {
 
 
 .la-wa small {
-
   display: block;
 
   font-size: 12px;
@@ -1529,7 +1378,6 @@ small {
    ============================================================ */
 
 .la-form {
-
   padding: 32px;
 
   border: 1px solid var(--color-border);
@@ -1543,7 +1391,6 @@ small {
 
 
 .la-label {
-
   font-size: var(--font-label) !important;
 
   font-weight: 700 !important;
@@ -1559,7 +1406,6 @@ small {
 
 
 .la-select {
-
   padding: 13px 14px !important;
 
   border-color: var(--color-border) !important;
@@ -1575,7 +1421,6 @@ small {
 
 
 .la-form-message {
-
   min-height: 18px;
 
   color: var(--color-error);
@@ -1595,7 +1440,6 @@ small {
 .la-input:focus,
 .la-select:focus,
 .la-form-control:focus {
-
   border: 2px solid var(--color-focus) !important;
 
   outline: none !important;
@@ -1607,7 +1451,6 @@ small {
 
 .la-form .la-input:focus,
 .la-form .la-select:focus {
-
   border: 2px solid var(--color-focus) !important;
 
   background: var(--color-bg-secondary) !important;
@@ -1618,25 +1461,15 @@ small {
 
 
 /* ============================================================
-   ERROR — IS-INVALID
+   ERROR
    ============================================================ */
 
 .la-input.is-invalid,
 .la-select.is-invalid,
 .la-form-control.is-invalid {
-
   border: 2px solid var(--color-error) !important;
 
-  background-image:
-    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23DC3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linecap='round' d='M6 3.5v3'/%3e%3ccircle cx='6' cy='8.5' r='.6' fill='%23DC3545' stroke='none'/%3e%3c/svg%3e") !important;
-
-  background-repeat: no-repeat !important;
-
-  background-position: right 14px center !important;
-
-  background-size: 16px 16px !important;
-
-  padding-right: 42px !important;
+  background-image: none !important;
 
   box-shadow: none !important;
 }
@@ -1645,7 +1478,6 @@ small {
 .la-input.is-invalid:focus,
 .la-select.is-invalid:focus,
 .la-form-control.is-invalid:focus {
-
   border: 2px solid var(--color-error) !important;
 
   box-shadow:
@@ -1653,11 +1485,8 @@ small {
 }
 
 
-/* Mensaje de error */
-
 .la-field-error,
 .invalid-feedback {
-
   display: block;
 
   margin-top: 6px;
@@ -1674,7 +1503,6 @@ small {
 
 .la-field-error .bi-exclamation-circle,
 .invalid-feedback .bi-exclamation-circle {
-
   margin-right: 5px;
 
   font-size: 14px;
@@ -1684,25 +1512,15 @@ small {
 
 
 /* ============================================================
-   ÉXITO — IS-VALID
+   ÉXITO
    ============================================================ */
 
 .la-input.is-valid,
 .la-select.is-valid,
 .la-form-control.is-valid {
-
   border: 2px solid var(--color-success) !important;
 
-  background-image:
-    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23198754' stroke-width='2'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M3 6.5l2 2L9.5 4'/%3e%3c/svg%3e") !important;
-
-  background-repeat: no-repeat !important;
-
-  background-position: right 14px center !important;
-
-  background-size: 16px 16px !important;
-
-  padding-right: 42px !important;
+  background-image: none !important;
 
   box-shadow: none !important;
 }
@@ -1711,7 +1529,6 @@ small {
 .la-input.is-valid:focus,
 .la-select.is-valid:focus,
 .la-form-control.is-valid:focus {
-
   border: 2px solid var(--color-success) !important;
 
   box-shadow:
@@ -1719,11 +1536,8 @@ small {
 }
 
 
-/* Mensaje de éxito */
-
 .la-field-success,
 .valid-feedback {
-
   display: block;
 
   margin-top: 6px;
@@ -1740,7 +1554,6 @@ small {
 
 .la-field-success .bi-check-circle,
 .valid-feedback .bi-check-circle {
-
   margin-right: 5px;
 
   font-size: 14px;
@@ -1776,7 +1589,6 @@ small {
 
 .la-input:disabled::placeholder,
 .la-input[disabled]::placeholder {
-
   color: var(--color-disabled-text) !important;
 }
 
@@ -1790,11 +1602,11 @@ small {
 button:disabled,
 button.disabled {
 
-  background-color: var(--color-disabled-bg) !important;
+  background-color: var(--color-disabled-text) !important;
 
-  border-color: var(--color-disabled-border) !important;
+  border-color: var(--color-disabled-text) !important;
 
-  color: var(--color-disabled-text) !important;
+  color: var(--color-on-dark) !important;
 
   cursor: not-allowed;
 
@@ -1803,8 +1615,6 @@ button.disabled {
   transform: none !important;
 
   box-shadow: none !important;
-
-  pointer-events: none;
 }
 
 
@@ -1813,39 +1623,47 @@ button.disabled {
 button:disabled:hover,
 button.disabled:hover {
 
-  background-color: var(--color-disabled-bg) !important;
+  background-color: var(--color-disabled-text) !important;
 
-  border-color: var(--color-disabled-border) !important;
+  border-color: var(--color-disabled-text) !important;
 
-  color: var(--color-disabled-text) !important;
+  color: var(--color-on-dark) !important;
 
   transform: none !important;
 }
 
 
 /* ============================================================
-   LOADING — BOTÓN DURANTE ENVÍO
+   ESTADO DE CARGA — FORMULARIO DE CONTACTO
    ============================================================ */
 
 .la-btn.is-loading {
-
   pointer-events: none;
 
   cursor: wait;
+
+  opacity: .85;
+
+  transform: none !important;
 }
 
 
-.la-btn.is-loading .spinner-border {
+.la-btn.is-loading .la-loading-spinner {
+  width: 16px;
+  height: 16px;
 
-  width: 14px;
-
-  height: 14px;
+  flex: 0 0 16px;
 
   border-width: 2px;
+  border-color: rgba(255, 255, 255, .35);
+  border-top-color: var(--color-loading-button-spinner);
 
-  margin-right: 6px;
+  animation: la-spinner .75s linear infinite;
+}
 
-  vertical-align: -2px;
+
+.la-btn.is-loading .la-loading-text {
+  min-height: 16px;
 }
 
 
@@ -1854,7 +1672,6 @@ button.disabled:hover {
    ============================================================ */
 
 .la-footer {
-
   padding: 24px 0;
 
   background: var(--color-bg-dark);
@@ -1863,7 +1680,6 @@ button.disabled:hover {
 
 .la-footer p,
 .la-footer span {
-
   font-size: 12px;
 
   color: var(--color-on-dark-faint);
@@ -1875,25 +1691,20 @@ button.disabled:hover {
    ============================================================ */
 
 .la-back-to-top {
-
   position: fixed;
 
   right: 20px;
-
   bottom: 20px;
 
   z-index: 900;
 
   width: 44px;
-
   height: 44px;
 
   display: grid;
-
   place-items: center;
 
   border: 0;
-
   border-radius: 50%;
 
   background: var(--color-primary);
@@ -1905,7 +1716,6 @@ button.disabled:hover {
   cursor: pointer;
 
   opacity: 0;
-
   visibility: hidden;
 
   transform: translateY(10px);
@@ -1918,7 +1728,6 @@ button.disabled:hover {
 
 
 .la-back-to-top.visible {
-
   opacity: 1;
 
   visibility: visible;
@@ -1932,30 +1741,25 @@ button.disabled:hover {
    ============================================================ */
 
 [data-theme="dark"] body {
-
   background: var(--color-bg);
-
   color: var(--color-text);
 }
 
 
 [data-theme="dark"] .la-areas,
 [data-theme="dark"] .la-honorarios {
-
   background: var(--color-bg);
 }
 
 
 [data-theme="dark"] .la-about,
 [data-theme="dark"] .la-contact {
-
   background: var(--color-bg-secondary);
 }
 
 
 [data-theme="dark"] .la-area-card,
 [data-theme="dark"] .la-price-card {
-
   background: var(--color-bg-secondary);
 
   border-color: var(--color-border);
@@ -1967,19 +1771,16 @@ button.disabled:hover {
 [data-theme="dark"] .la-honorarios p,
 [data-theme="dark"] .la-contact p,
 [data-theme="dark"] .la-price-card > p {
-
   color: var(--color-text-muted);
 }
 
 
 [data-theme="dark"] .la-contact-list li {
-
   color: var(--color-text-secondary);
 }
 
 
 [data-theme="dark"] .la-form {
-
   background: var(--color-bg-secondary);
 
   border-color: var(--color-border);
@@ -1987,13 +1788,11 @@ button.disabled:hover {
 
 
 [data-theme="dark"] .la-label {
-
   color: var(--color-text) !important;
 }
 
 
 [data-theme="dark"] .la-select {
-
   background-color: var(--color-bg-input) !important;
 
   border-color: var(--color-border) !important;
@@ -2003,7 +1802,6 @@ button.disabled:hover {
 
 
 [data-theme="dark"] .la-input {
-
   background: var(--color-bg-input) !important;
 
   border-color: var(--color-border) !important;
@@ -2013,13 +1811,11 @@ button.disabled:hover {
 
 
 [data-theme="dark"] .la-input::placeholder {
-
   color: var(--color-text-muted) !important;
 }
 
 
 [data-theme="dark"] .la-btn-outline-dark {
-
   border-color: var(--color-border);
 
   color: var(--color-text);
@@ -2027,7 +1823,6 @@ button.disabled:hover {
 
 
 [data-theme="dark"] .la-btn-outline-dark:hover {
-
   background: var(--color-border);
 
   color: var(--color-text);
@@ -2035,13 +1830,11 @@ button.disabled:hover {
 
 
 [data-theme="dark"] .la-area-icon {
-
   background: rgba(168, 48, 64, .15);
 }
 
 
 [data-theme="dark"] .la-wa {
-
   border-color: var(--color-border);
 
   color: var(--color-text-muted);
@@ -2049,57 +1842,32 @@ button.disabled:hover {
 
 
 /* ============================================================
-   DARK MODE — ESTADOS DEL FORMULARIO
+   DARK MODE — ESTADOS DE CARGA
    ============================================================ */
 
-[data-theme="dark"] .la-input.is-valid,
-[data-theme="dark"] .la-select.is-valid,
-[data-theme="dark"] .la-form-control.is-valid {
+[data-theme="dark"] .la-loading {
+  background: var(--color-loading-bg);
 
-  border-color: var(--color-success) !important;
+  border-color: var(--color-loading-border);
 
-  background-color: var(--color-bg-input) !important;
+  color: var(--color-loading-text);
 }
 
 
-[data-theme="dark"] .la-input.is-invalid,
-[data-theme="dark"] .la-select.is-invalid,
-[data-theme="dark"] .la-form-control.is-invalid {
-
-  border-color: var(--color-error) !important;
-
-  background-color: var(--color-bg-input) !important;
+[data-theme="dark"] .la-loading-spinner {
+  border-color: rgba(216, 170, 75, .25);
+  border-top-color: var(--color-loading-spinner);
 }
 
 
-[data-theme="dark"] .la-field-error,
-[data-theme="dark"] .invalid-feedback {
-
-  color: var(--color-error);
+[data-theme="dark"] .la-btn.is-loading {
+  opacity: .85;
 }
 
 
-[data-theme="dark"] .la-field-success,
-[data-theme="dark"] .valid-feedback {
-
-  color: var(--color-success);
-}
-
-
-[data-theme="dark"] .la-input:disabled,
-[data-theme="dark"] .la-input[disabled],
-[data-theme="dark"] .la-select:disabled,
-[data-theme="dark"] .la-select[disabled],
-[data-theme="dark"] .la-form-control:disabled,
-[data-theme="dark"] .la-form-control[disabled] {
-
-  background-color: var(--color-disabled-bg) !important;
-
-  border-color: var(--color-disabled-border) !important;
-
-  color: var(--color-disabled-text) !important;
-
-  opacity: .75;
+[data-theme="dark"] .la-btn.is-loading .la-loading-spinner {
+  border-color: rgba(255, 255, 255, .35);
+  border-top-color: var(--color-loading-button-spinner);
 }
 
 
@@ -2110,13 +1878,10 @@ button.disabled:hover {
 @media (max-width: 991px) {
 
   .la-about-image {
-
     min-height: 420px;
   }
 
-
   .la-price-featured {
-
     transform: none;
   }
 
@@ -2128,43 +1893,27 @@ button.disabled:hover {
   .la-section,
   .la-about,
   .la-consulta {
-
     padding: 75px 0;
   }
 
 
   .la-hero h1 {
-
     font-size: 32px;
   }
 
 
   .la-hero-actions {
-
     flex-direction: column;
   }
 
 
-  .la-hero-actions .btn,
-  .la-hero-actions .la-btn {
-
+  .la-hero-actions .btn {
     width: 100%;
-
-    height: 48px;
-
-    min-height: 48px;
   }
 
 
   .la-consulta-form {
-
     flex-direction: column;
-  }
-
-
-  .la-consulta-form .la-btn {
-
-    width: 100%;
   }
 
 }
@@ -2189,9 +1938,8 @@ button.disabled:hover {
 
 
 /* ============================================================
-   ESCALA TIPOGRÁFICA — GARANTÍA MÍNIMA
+   ESCALA TIPOGRÁFICA 
    ============================================================ */
-
 
 .la-eyebrow,
 .la-brand strong,
@@ -2219,6 +1967,5 @@ button.disabled:hover {
 .valid-feedback,
 .la-footer p,
 .la-footer span {
-
   font-size: max(12px, 1em);
 }
